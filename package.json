@@ -6,9 +6,13 @@
 	"scripts": {
 		"ui:storybook": "pnpm --filter ui-react run storybook",
 		"build:ui": "pnpm --filter ui-react run build",
-		"build:storybook": "pnpm --filter ui-react run build:storybook"
+		"build:storybook": "pnpm --filter ui-react run build:storybook",
+		"format": "pnpm exec prettier packages/ --write"
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"prettier": "3.0.2"
+	}
 }
