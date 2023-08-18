@@ -1,0 +1,14 @@
+{
+	"name": "frontend-workspace",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"ui:storybook": "pnpm --filter ui-react run storybook",
+		"build:ui": "pnpm --filter ui-react run build",
+		"build:storybook": "pnpm --filter ui-react run build:storybook"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

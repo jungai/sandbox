@@ -1,0 +1,10 @@
+{
+	"name": "tsconfig",
+	"version": "1.0.0",
+	"author": "jungai",
+	"license": "ISC",
+	"private": true,
+	"publishConfig": {
+		"access": "public"
+	}
+}
