@@ -5,5 +5,12 @@ export type TButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 export function Button({ children, ...restProps }: TButtonProps) {
-	return <button {...restProps}>{children}</button>;
+	return (
+		<button
+			className="border border-black px-2 py-1 text-red-400 rounded-app"
+			{...restProps}
+		>
+			{children}
+		</button>
+	);
 }

@@ -1,3 +1,3 @@
-import { CheckBox } from './checkbox';
+import { CheckBox, type TCheckBoxProps } from './checkbox';
 
-export { CheckBox };
+export { CheckBox, TCheckBoxProps };
