@@ -1,0 +1,24 @@
+{
+	"name": "utils",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"module": "dist/index.mjs",
+	"exports": {
+		"import": "./dist/index.mjs",
+		"require": "./dist/index.js"
+	},
+	"scripts": {
+		"build": "tsup"
+	},
+	"author": "jungai",
+	"license": "ISC",
+	"devDependencies": {
+		"tsconfig": "workspace:^",
+		"tsup": "^7.2.0"
+	},
+	"dependencies": {
+		"clsx": "^2.0.0",
+		"tailwind-merge": "^1.14.0"
+	}
+}
