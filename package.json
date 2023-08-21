@@ -10,10 +10,10 @@
 	"packageManager": "pnpm@8.6.8",
 	"scripts": {
 		"ui:storybook": "pnpm --filter ui-react run storybook",
-		"build:ui": "pnpm --filter ui-react run build",
-		"build:utils": "pnpm --filter utils run build",
-		"build:storybook": "pnpm --filter ui-react run build:storybook",
-		"format": "pnpm exec prettier packages/ --write",
+		"build:ui": "turbo run build --filter=ui-react",
+		"build:utils": "turbo run build --filter=utils",
+		"build:storybook": "pnpm --filter ui-react run storybook:build",
+		"format": "prettier packages/ --write",
 		"changeset": "changeset",
 		"version-packages": "changeset version"
 	},
@@ -24,6 +24,7 @@
 		"@changesets/cli": "^2.26.2",
 		"@types/node": "^20.5.1",
 		"prettier": "3.0.2",
+		"turbo": "^1.10.12",
 		"typescript": "^5.1.6"
 	}
 }

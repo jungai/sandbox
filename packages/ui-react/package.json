@@ -13,7 +13,7 @@
 		"tailwind": "tailwindcss -i ./src/style.css -o ./dist/style.css",
 		"build": "tsup && pnpm tailwind --minify -o ./dist/style.css",
 		"storybook": "storybook dev -p 6006",
-		"build:storybook": "storybook build"
+		"storybook:build": "storybook build"
 	},
 	"keywords": [],
 	"author": "",
