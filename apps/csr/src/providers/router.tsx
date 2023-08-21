@@ -1,6 +1,6 @@
 import {
 	createBrowserRouter,
-	RouterProvider as LibRouterProvider,
+	RouterProvider as Provider,
 } from 'react-router-dom';
 import { Page } from '@/pages';
 
@@ -12,5 +12,5 @@ export const router = createBrowserRouter([
 ]);
 
 export function RouterProvider() {
-	return <LibRouterProvider router={router} />;
+	return <Provider router={router} />;
 }
