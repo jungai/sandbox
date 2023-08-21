@@ -1,11 +1,12 @@
+import { lazy, Suspense } from 'react';
 import {
 	createBrowserRouter,
 	RouterProvider as Provider,
 } from 'react-router-dom';
 import { Page } from '@/pages';
-import { Login } from '@/pages/login';
 
-// TODO: code splitting
+const Login = lazy(() => import('@/pages/login'));
+
 export const router = createBrowserRouter([
 	{
 		path: '/',
@@ -13,7 +14,13 @@ export const router = createBrowserRouter([
 	},
 	{
 		path: '/login',
-		Component: Login,
+		element: (
+			// TODO: Loading component
+			<Suspense fallback={<>Loading...</>}>
+				<Login />
+			</Suspense>
+		),
+		// Component: Login,
 	},
 ]);
 
