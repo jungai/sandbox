@@ -9,7 +9,7 @@ export const todosSchema = z.array(
 			title: z.string(),
 			completed: z.boolean(),
 		})
-		.strict(),
+		.strict()
 );
 
 // convert model to type

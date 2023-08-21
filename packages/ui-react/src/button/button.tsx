@@ -10,7 +10,7 @@ export function Button({ children, className, ...restProps }: TButtonProps) {
 		<button
 			className={cn(
 				'border border-black px-2 py-1 text-red-400 rounded-app',
-				className,
+				className
 			)}
 			{...restProps}
 		>

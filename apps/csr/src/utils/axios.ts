@@ -17,7 +17,7 @@ const instance = axios.create({
 export async function callGetApi<T>(
 	path: string,
 	schema: ZodType<T>,
-	axiosOpts?: AxiosRequestConfig,
+	axiosOpts?: AxiosRequestConfig
 ) {
 	try {
 		const rawResp = await instance.get<T>(path, axiosOpts);

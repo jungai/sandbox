@@ -14,7 +14,7 @@
 		"build:ui": "turbo run build --filter=ui-react",
 		"build:utils": "turbo run build --filter=utils",
 		"build:storybook": "pnpm --filter ui-react run storybook:build",
-		"format": "prettier packages/ --write",
+		"format": "prettier packages/ apps/ --write",
 		"changeset": "changeset",
 		"version-packages": "changeset version"
 	},
