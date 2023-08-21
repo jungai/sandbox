@@ -9,6 +9,7 @@
 	},
 	"packageManager": "pnpm@8.6.8",
 	"scripts": {
+		"dev:csr": "turbo run dev --filter=csr",
 		"ui:storybook": "pnpm --filter ui-react run storybook",
 		"build:ui": "turbo run build --filter=ui-react",
 		"build:utils": "turbo run build --filter=utils",
