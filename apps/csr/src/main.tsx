@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from '@/providers/router';
 import { QueryClientProvider } from '@/providers/tanstack-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import '@/utils/i18n';
 
 import '@/index.css';
 import 'ui-react/dist/style.css';
