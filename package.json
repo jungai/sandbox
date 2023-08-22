@@ -10,9 +10,11 @@
 	"packageManager": "pnpm@8.6.8",
 	"scripts": {
 		"dev:csr": "turbo run dev --filter=csr",
+		"start:express": "turbo run start --filter=express-app",
 		"ui:storybook": "pnpm --filter ui-react run storybook",
 		"build:ui": "turbo run build --filter=ui-react",
 		"build:utils": "turbo run build --filter=utils",
+		"build:express": "turbo run build --filter=express-app",
 		"build:storybook": "pnpm --filter ui-react run storybook:build",
 		"format": "prettier packages/ apps/ --write",
 		"changeset": "changeset",
