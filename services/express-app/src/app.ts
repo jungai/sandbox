@@ -1,10 +1,21 @@
 import type { Express } from 'express';
 import express from 'express';
-import { setupCors } from './middleware/cors';
-import { setupBodyParser } from './middleware/body-parser';
-import { setupRoutes } from './middleware/routes';
+import {
+	setupBodyParser,
+	setupCors,
+	setupError,
+	setupRoutes,
+	setupMorgan,
+	setupInterceptorResponse,
+	setupJsonReplacer,
+} from './middleware';
 
-export const app: Express = [setupCors, setupBodyParser, setupRoutes].reduce(
-	(e, middleware) => middleware(e),
-	express()
-);
+export const app: Express = [
+	setupCors,
+	setupBodyParser,
+	setupMorgan, // <-- log req
+	setupJsonReplacer, // <-- replace undefined with null
+	setupInterceptorResponse, // <- normalize response here
+	setupRoutes,
+	setupError, // <-- handle all error
+].reduce((e, middleware) => middleware(e), express());
