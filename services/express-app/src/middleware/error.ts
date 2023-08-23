@@ -9,6 +9,7 @@ export function setupError(e: Express): Express {
 	const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
 		// known exceptions
 		if (err instanceof AppError) {
+			// TODO: separate logger into middleware ?
 			// logger
 			logger.error(err.title, err);
 			res.send(err);
