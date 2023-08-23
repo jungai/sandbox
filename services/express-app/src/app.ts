@@ -13,9 +13,9 @@ import {
 export const app: Express = [
 	setupCors,
 	setupBodyParser,
-	setupMorgan, // <-- log req
-	setupJsonReplacer, // <-- replace undefined with null
-	setupInterceptorResponse, // <- normalize response here
+	setupMorgan,
+	setupJsonReplacer,
+	setupInterceptorResponse,
 	setupRoutes,
-	setupError, // <-- handle all error
+	setupError,
 ].reduce((e, middleware) => middleware(e), express());
