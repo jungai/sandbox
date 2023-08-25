@@ -21,7 +21,7 @@ export function setupMorgan(e: Express): Express {
 }
 
 export function setupContract(e: Express): Express {
-	// NOTE: currently @ts-rest/express can't add global middleware for handling error
+	// NOTE: currently @ts-rest/express can't add global middleware for handling error & interceptor
 	// e.g. (err, req, res, next) => void
 
 	createExpressEndpoints(helloWorldContract, helloworldRouter, e);
