@@ -217,6 +217,15 @@ importers:
 
   services/express-app:
     dependencies:
+      '@ts-rest/core':
+        specifier: ^3.28.0
+        version: 3.28.0(zod@3.22.2)
+      '@ts-rest/express':
+        specifier: ^3.28.0
+        version: 3.28.0(@ts-rest/core@3.28.0)(express@4.18.2)(zod@3.22.2)
+      '@ts-rest/open-api':
+        specifier: ^3.28.0
+        version: 3.28.0(@ts-rest/core@3.28.0)(zod@3.22.2)
       cors:
         specifier: ^2.8.5
         version: 2.8.5
@@ -251,6 +260,9 @@ importers:
       '@types/morgan':
         specifier: ^1.9.5
         version: 1.9.5
+      '@types/swagger-ui-express':
+        specifier: ^4.1.3
+        version: 4.1.3
       tsconfig:
         specifier: workspace:^
         version: link:../../packages/tsconfig
@@ -274,6 +286,17 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.19
     dev: true
+
+  /@anatine/zod-openapi@1.14.2(openapi3-ts@2.0.2)(zod@3.22.2):
+    resolution: {integrity: sha512-q0qHfnuNYVKu0Swrnnvfj9971AEyW7c8v9jCOZGCl5ZbyGMNG4RPyJkRcMi/JC8CRfdOe0IDfNm1nNsi2avprg==}
+    peerDependencies:
+      openapi3-ts: ^2.0.0 || ^3.0.0
+      zod: ^3.20.0
+    dependencies:
+      openapi3-ts: 2.0.2
+      ts-deepmerge: 6.2.0
+      zod: 3.22.2
+    dev: false
 
   /@aw-web-design/x-default-browser@1.4.126:
     resolution: {integrity: sha512-Xk1sIhyNC/esHGGVjL/niHLowM0csl/kFO5uawBy4IrWwy0o1G8LGt3jP6nmWGz+USxeeqbihAmp/oVZju6wug==}
@@ -3986,6 +4009,44 @@ packages:
       '@testing-library/dom': 9.3.1
     dev: true
 
+  /@ts-rest/core@3.28.0(zod@3.22.2):
+    resolution: {integrity: sha512-m0Wn2DgO3O57dsGT5fqxvF/WNFPx/8/dxbqLMV9TYXwLBgaJG4vDgR7qXVIYss/c5vlHTQ0oB9X+PwxhI3ksMg==}
+    peerDependencies:
+      zod: ^3.21.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+    dependencies:
+      zod: 3.22.2
+    dev: false
+
+  /@ts-rest/express@3.28.0(@ts-rest/core@3.28.0)(express@4.18.2)(zod@3.22.2):
+    resolution: {integrity: sha512-kkFdgBCtSDGIRcnh+uJGK5BMiYo/bHMH0/zVhAA4T3Wb6PPixf80GtsT9KiOOciVrG4JtLWQbsdTh69KxjPe5g==}
+    peerDependencies:
+      '@ts-rest/core': 3.28.0
+      express: ^4.0.0
+      zod: ^3.21.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+    dependencies:
+      '@ts-rest/core': 3.28.0(zod@3.22.2)
+      express: 4.18.2
+      zod: 3.22.2
+    dev: false
+
+  /@ts-rest/open-api@3.28.0(@ts-rest/core@3.28.0)(zod@3.22.2):
+    resolution: {integrity: sha512-9EG1mWxzcTriWAQGLNLXvpRT5VLKIQGPcBfTndRDsHUQe9jor+GtjEP8ttuoTfo3GlhkND9V6Qrikda1/kM0tg==}
+    peerDependencies:
+      '@ts-rest/core': 3.28.0
+      zod: ^3.21.0
+    dependencies:
+      '@anatine/zod-openapi': 1.14.2(openapi3-ts@2.0.2)(zod@3.22.2)
+      '@ts-rest/core': 3.28.0(zod@3.22.2)
+      openapi3-ts: 2.0.2
+      zod: 3.22.2
+    dev: false
+
   /@types/aria-query@5.0.1:
     resolution: {integrity: sha512-XTIieEY+gvJ39ChLcB4If5zHtPxt3Syj5rgZR+e1ctpmK8NjPf0zFqsz4JpLJT0xla9GFDKjy8Cpu331nrmE1Q==}
     dev: true
@@ -4255,6 +4316,13 @@ packages:
       '@types/http-errors': 2.0.1
       '@types/mime': 3.0.1
       '@types/node': 20.5.1
+    dev: true
+
+  /@types/swagger-ui-express@4.1.3:
+    resolution: {integrity: sha512-jqCjGU/tGEaqIplPy3WyQg+Nrp6y80DCFnDEAvVKWkJyv0VivSSDCChkppHRHAablvInZe6pijDFMnavtN0vqA==}
+    dependencies:
+      '@types/express': 4.17.17
+      '@types/serve-static': 1.15.2
     dev: true
 
   /@types/triple-beam@1.3.2:
@@ -8105,6 +8173,12 @@ packages:
       is-wsl: 2.2.0
     dev: true
 
+  /openapi3-ts@2.0.2:
+    resolution: {integrity: sha512-TxhYBMoqx9frXyOgnRHufjQfPXomTIHYKhSKJ6jHfj13kS8OEIhvmE8CTuQyKtjjWttAjX5DPxM1vmalEpo8Qw==}
+    dependencies:
+      yaml: 1.10.2
+    dev: false
+
   /optionator@0.9.3:
     resolution: {integrity: sha512-JjCoypp+jKn1ttEFExxhetCKeJt9zhAgAve5FXHixTvFDW/5aEktX9bufBKLRRMdU7bNtpLfcGu94B3cdEJgjg==}
     engines: {node: '>= 0.8.0'}
@@ -9858,6 +9932,11 @@ packages:
     engines: {node: '>=6.10'}
     dev: true
 
+  /ts-deepmerge@6.2.0:
+    resolution: {integrity: sha512-2qxI/FZVDPbzh63GwWIZYE7daWKtwXZYuyc8YNq0iTmMUwn4mL0jRLsp6hfFlgbdRSR4x2ppe+E86FnvEpN7Nw==}
+    engines: {node: '>=14.13.1'}
+    dev: false
+
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
@@ -10600,6 +10679,11 @@ packages:
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
+
+  /yaml@1.10.2:
+    resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
+    engines: {node: '>= 6'}
+    dev: false
 
   /yaml@2.3.1:
     resolution: {integrity: sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==}

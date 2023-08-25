@@ -1,23 +1,6 @@
 import { AppError } from './app-error';
-import { StatusCodes } from 'http-status-codes';
 
-// TODO: add logger
-export type TLoggerValue = {
-	timestamp: Date;
-	path: string;
-	error: string;
-	message: string;
-	status: number;
-};
-
-export type TResponse<T = object> = {
-	error: string | null;
-	message: string | null;
-	status: number;
-	result?: T | null;
-};
-
-export function normalizeResponseError(err: AppError): TResponse {
+export function normalizeResponseError(err: AppError) {
 	return {
 		error: err.title,
 		message: err.message,
@@ -26,10 +9,7 @@ export function normalizeResponseError(err: AppError): TResponse {
 	};
 }
 
-export function normalizeResponse<T extends object>(
-	data: T,
-	status?: StatusCodes
-): TResponse<T> {
+export function normalizeResponse<T extends object>(data: T, status?: number) {
 	return {
 		error: null,
 		message: null,

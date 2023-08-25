@@ -1,15 +1,37 @@
-import type { RequestHandler } from 'express';
 import { StatusCodes, ReasonPhrases } from 'http-status-codes';
 import { AppError } from '../../utils/app-error';
+import { initServer } from '@ts-rest/express';
+import { helloWorldContract } from '../../contract';
+import {
+	normalizeResponse,
+	normalizeResponseError,
+} from '../../utils/normalize-response';
+import { z } from 'zod';
+import { HelloWorldSchema } from '../../models/resp';
 
-export const helloworld: RequestHandler = (_req, res, _next) => {
-	if (Math.random() < 0.5) {
-		throw new AppError(
-			StatusCodes.INTERNAL_SERVER_ERROR,
-			ReasonPhrases.INTERNAL_SERVER_ERROR,
-			'fck this kub'
-		);
-	} else {
-		res.send([{ name: 'ui' }, { name: 'chaewon' }]);
-	}
-};
+const s = initServer();
+
+export const helloworldRouter = s.router(helloWorldContract, {
+	helloworld: async () => {
+		if (Math.random() < 0.5) {
+			return {
+				status: 500,
+				body: normalizeResponseError(
+					new AppError(
+						StatusCodes.INTERNAL_SERVER_ERROR,
+						ReasonPhrases.INTERNAL_SERVER_ERROR,
+						'Random Eror'
+					)
+				),
+			};
+		}
+
+		return {
+			status: 200,
+			body: normalizeResponse<z.infer<typeof HelloWorldSchema>>([
+				{ name: 'iu' },
+				{ name: 'chaewon' },
+			]),
+		};
+	},
+});
