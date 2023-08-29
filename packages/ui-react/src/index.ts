@@ -1,2 +1,3 @@
-export { Button, type TButtonProps } from './button';
-export { CheckBox, type TCheckBoxProps } from './checkbox';
+export * from './button';
+export * from './checkbox';
+export * from './label';
