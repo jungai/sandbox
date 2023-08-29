@@ -1,3 +1,4 @@
+import { Button, Input } from 'ui-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -33,7 +34,7 @@ export function Login() {
 					onSubmit={handleSubmit(onSubmit)}
 				>
 					<div>
-						<input
+						<Input
 							{...register('username')}
 							className="px-2 py-1 bg-white border-primary border rounded-app w-full"
 							placeholder="username"
@@ -42,7 +43,7 @@ export function Login() {
 						<p className="text-red-400 text-sm">{errors.username?.message}</p>
 					</div>
 					<div>
-						<input
+						<Input
 							{...register('password')}
 							type="password"
 							className="px-2 py-1 bg-white border-primary border rounded-app w-full"
@@ -51,9 +52,9 @@ export function Login() {
 						/>
 						<p className="text-red-400 text-sm">{errors.password?.message}</p>
 					</div>
-					<button type="submit" className="border border-primary px-3 py-1">
+					<Button type="submit" className="border border-primary px-3 py-1">
 						submit
-					</button>
+					</Button>
 				</form>
 			</div>
 		</div>
