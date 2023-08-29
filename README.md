@@ -1,4 +1,4 @@
-# Front-end Workspaces
+# Sandbox
 
 > required `nodejs` = 18.16.0, `pnpm` = 8.6.0
 
